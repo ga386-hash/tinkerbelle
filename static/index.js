@@ -105,9 +105,9 @@ audioIn.onkeyup = (e) => { if (e.keyCode === 13) { play.click(); } };
 
 document.addEventListener('keydown', function(e) {
   let hexCode;
-  if (e.key === '1') {
+  if (e.key === 'a') {
     hexCode = '#000000'; // black
-  } else if (e.key === '2') {
+  } else if (e.key === 's') {
     hexCode = '#FF0000'; // red
   } else {
     return;
