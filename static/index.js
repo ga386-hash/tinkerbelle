@@ -102,3 +102,12 @@ pause.onclick = () => {
   audio.pause();
 };
 audioIn.onkeyup = (e) => { if (e.keyCode === 13) { play.click(); } };
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === '1') {
+    socket.emit('color_change', 'rgba(0, 0, 0, 1)');   // black
+  }
+  if (e.key === '2') {
+    socket.emit('color_change', 'rgba(255, 0, 0, 1)'); // red
+  }
+});
