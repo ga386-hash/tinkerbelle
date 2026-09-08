@@ -104,10 +104,14 @@ pause.onclick = () => {
 audioIn.onkeyup = (e) => { if (e.keyCode === 13) { play.click(); } };
 
 document.addEventListener('keydown', function(e) {
+  let hexCode;
   if (e.key === '1') {
-    socket.emit('color_change', 'rgba(0, 0, 0, 1)');   // black
+    hexCode = '#000000'; // black
+  } else if (e.key === '2') {
+    hexCode = '#FF0000'; // red
+  } else {
+    return;
   }
-  if (e.key === '2') {
-    socket.emit('color_change', 'rgba(255, 0, 0, 1)'); // red
-  }
+  document.body.style.backgroundColor = hexCode;
+  socket.emit('hex', hexCode);
 });
